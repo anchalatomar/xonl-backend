@@ -11,7 +11,10 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.send('Server is running');
 });
-
+app.get('/version', (req, res) => {
+  const mongooseVersion = require('mongoose').version;
+  res.json({ mongooseVersion });
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
