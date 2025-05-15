@@ -5,7 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+const allowedOrigins = ['https://www.multiply.onl/', 'http://localhost:3000'];
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
