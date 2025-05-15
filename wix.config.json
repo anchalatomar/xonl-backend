@@ -1,0 +1,5 @@
+{
+  "type": "backend",
+  "entry": "server.js",
+  "port": 4000
+}
